@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+form
+{font-family: verdana ;
+ color: blue;
+}
+h1
+{ color:red;
+text-align:center;
+}
+body{text-align:center}
+</style>
+
+<script>
+
+
+function val()
+{
+
+var x = document.forms["myform"]["fname"].value;
+var y=document.forms["myform"]["num"].value;
+var z=document.forms["myform"]["mail"].value;
+if(x == "")
+{
+	alert("Name must be filled");
+	return false;
+}
+var ph=/^\d{10}$/;
+if(!y.match(ph))
+{
+	alert("Enter valid phone number");
+	return false;
+}
+var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(!z.match(e))
+{
+alert("Enter valid Email");
+	return false;
+}
+}
+</script>
+</head>
+<body>
+<h1>
+ Registration form
+</h1>
+<form name="myform" action= "regg.jsp" onsubmit="return val()" method="post">
+Name:
+<input type="text" name="fname">
+<br>
+<br>
+Password:
+<input type="text" name="pwd">
+<br>
+<br>
+DOB:
+<input type="Date">
+<br>
+<br>
+Phone No:
+<input type="text" placeholder="Phone Number" name="num">
+<br>
+<br>
+Email:
+<input type="text" name="mail">
+<br>
+<br>
+Address:
+<textarea rows="5" cols="50" ></textarea>
+<br>
+<br>
+Tour Name:
+<select name="Tour Type">
+<option> Sight seeing Tours </option>
+<option> family</option>
+<option> friends</option>
+<option> Shore Excursion Tours</option>
+<option> Adventure or Sporting Tours</option>
+<option> Honeymoon</option>
+</select>
+<br>
+<br>
+Country Name:
+<select name="Country">
+<option> India </option>
+<option> UK </option>
+<option> USA </option>
+<option> UAE </option>
+<option> Bali</option>
+<option> Europe</option>
+<option> France </option>
+<option> Thailand </option>
+<option> Nepal </option>
+<option> Hong kong</option>
+<option> Sri lanka </option>
+<option> </option>
+</select>
+<br>
+<br>
+State:
+<input type="text" placeholder="Name of State">
+<br>
+<br>
+<input type= "submit" value= "Submit" >
+</form>
+
+</body>
+</html>
